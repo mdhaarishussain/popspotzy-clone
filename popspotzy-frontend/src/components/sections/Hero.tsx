@@ -2,16 +2,41 @@
 
 import { motion } from 'framer-motion';
 import GradientButton from '@/components/ui/GradientButton';
+import { FiBarChart, FiUsers, FiTarget, FiMapPin } from 'react-icons/fi';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 export default function Hero() {
+  const features = [
+      {
+        title: "Brand Analysis",
+        description: "AI-powered insights into your brand identity, audience, and market positioning",
+        icon: <FiTarget size={28} />
+      },
+      {
+        title: "Agency Marketplace",
+        description: "Connect with vetted experiential agencies that match your brand and budget",
+        icon: <FiUsers size={28} />
+      },
+      {
+        title: "Campaign Management",
+        description: "Plan, execute, and monitor your campaigns from one centralized dashboard",
+        icon: <FiBarChart size={28} />
+      },
+      {
+        title: "Location Intelligence",
+        description: "AI-driven location recommendations for maximum impact and engagement",
+        icon: <FiMapPin size={28} />
+      }
+    ];
+    
   return (
-    <div className="overflow-hidden justify-center items-center flex text-center bg-slate-100 w-full h-5/12 pt-24 md:pb-10">
+    <div className="overflow-hidden justify-center items-center flex flex-col text-center bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 w-full pt-24">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="opacity-100 transform-none justify-center items-center flex flex-col">
+            <div className="opacity-100 transform-none justify-center items-center flex flex-col md:pb-10">
             <h1 className="text-4xl md:text-5xl mb-8 tracking-widest">
               Transform Your Brand Marketing with AI
             </h1>
@@ -31,6 +56,30 @@ export default function Hero() {
             </div>
             </div>
           </motion.div>
+
+
+          <section id="features" className="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 px-10">
+                <div className="max-w-full mx-auto ">
+                  {/* <div className="text-center mb-20">
+                    <h2 className="text-5xl font-bold mb-6">Powerful Features</h2>
+                    <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+                      Everything you need to create, execute, and track marketing campaigns
+                    </p>
+                  </div> */}
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 font-light">
+                    {features.map((feature, index) => (
+                      <FeatureCard 
+                        key={feature.title}
+                        title={feature.title}
+                        description={feature.description}
+                        icon={feature.icon}
+                        delay={index * 0.1}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </section>
           
         </div>
   );

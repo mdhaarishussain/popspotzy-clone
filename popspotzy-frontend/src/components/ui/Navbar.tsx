@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3">
         <div className=" flex items-center space-x-2">
-          <Image src="/logo.png" alt="Popspotzy Logo" width={120} height={20} />
+          <Link href="/"><Image src="/logo.png" alt="Popspotzy Logo" width={120} height={20} /></Link>
         </div>
         
         <div className="hidden md:flex space-x-10">
