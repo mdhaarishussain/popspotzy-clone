@@ -49,7 +49,7 @@ export default function Hero() {
               <div className="mt-6">
                 <h3 className="font-bold text-2xl mb-3">Generated Strategy</h3>
                 <p className="text-gray-600 text-lg">
-                  "Gen Z Makeup Line in UAE" → Full campaign with visuals, calendar, and vendor suggestions
+                  &quot;Gen Z Makeup Line in UAE&quot; → Full campaign with visuals, calendar, and vendor suggestions
                 </p>
               </div>
             </div>
