@@ -13,7 +13,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="text-6xl md:text-8xl font-bold leading-none mb-8">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8">
               <span className="gradient-text block mb-4">AI-Powered</span>
               Marketing Strategies
               <span className="block mt-4">in Seconds</span>
