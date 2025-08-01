@@ -5,57 +5,33 @@ import GradientButton from '@/components/ui/GradientButton';
 
 export default function Hero() {
   return (
-    <div className="relative pt-40 pb-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+    <div className="overflow-hidden justify-center items-center flex text-center bg-slate-100 w-full h-5/12 pt-24 md:pb-10">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-8">
-              <span className="gradient-text block mb-4">AI-Powered</span>
-              Marketing Strategies
-              <span className="block mt-4">in Seconds</span>
+            <div className="opacity-100 transform-none justify-center items-center flex flex-col">
+            <h1 className="text-4xl md:text-5xl mb-8 tracking-widest">
+              Transform Your Brand Marketing with AI
             </h1>
             
-            <p className="text-2xl text-gray-600 max-w-xl mb-12">
-              Transform a single prompt into complete, industry-aware marketing campaigns with visuals, content calendars, and vendor bookings.
+            <p className="text-sm md:text-lg text-gray-400 max-w-3xl mb-14">
+              Connect with curated agencies, analyze and grow your brand with bespoke marketing, and create unforgettable experiences that drive real results.
             </p>
-            
-            <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6">
-              <GradientButton className="text-lg px-10 py-5">
-                Start Free Trial
+
+            <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6 justify-center items-center">
+              <GradientButton className="text-md px-5 py-2">
+                Analyze Your Brand &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-sparkles w-5 h-5"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
               </GradientButton>
               
-              <button className="px-10 py-5 border-2 border-purple-600 text-purple-600 rounded-xl font-medium hover:bg-purple-50 transition-colors text-lg">
-                See Demo
+              <button className="px-5 py-2 border-2 border-slate-200 text-black rounded-4xl font-medium hover:bg-pink-500 hover:text-white cursor-pointer transition-colors text-md">
+                Book Demo
               </button>
+            </div>
             </div>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" />
-            <div className="absolute top-10 -left-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000" />
-            <div className="absolute bottom-0 right-10 w-80 h-80 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000" />
-            
-            <div className="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-dashed border-gray-200 rounded-2xl w-full h-96" />
-              <div className="mt-6">
-                <h3 className="font-bold text-2xl mb-3">Generated Strategy</h3>
-                <p className="text-gray-600 text-lg">
-                  &quot;Gen Z Makeup Line in UAE&quot; → Full campaign with visuals, calendar, and vendor suggestions
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
-      </div>
-    </div>
   );
 }

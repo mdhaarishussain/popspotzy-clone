@@ -20,17 +20,17 @@ export default function CTA() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-8"
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-anton font-bold mb-6 gradient-text leading-tight"
+          <motion.h1 
+            className="text-4xl md:text-5xl mb-6 gradient-text tracking-widest"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             Ready to Revolutionize Your Marketing?
-          </motion.h2>
+          </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-lg text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -39,21 +39,18 @@ export default function CTA() {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8"
+            className="flex justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <GradientButton className="text-xl px-12 py-4 shadow-lg transform hover:scale-105 transition-all duration-300">
+            <GradientButton className="text-lg px-18 py-3 shadow-lg transform hover:scale-105 transition-all duration-300">
               Start Free Trial
             </GradientButton>
-            <button className="px-12 py-4 border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 text-xl shadow-md transform hover:scale-105">
-              Schedule a Demo
-            </button>
           </motion.div>
           
           <motion.p 
-            className="mt-8 text-gray-600 text-lg"
+            className=" text-gray-600 text-sm -mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}

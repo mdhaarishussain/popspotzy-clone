@@ -1,61 +1,41 @@
 import FeatureCard from '../ui/FeatureCard';
-import { FiZap, FiUser, FiMail, FiImage, FiShoppingBag, FiBarChart, FiUsers, FiCreditCard } from 'react-icons/fi';
+import { FiZap, FiUser, FiMail, FiImage, FiShoppingBag, FiBarChart, FiUsers, FiCreditCard, FiTarget, FiMapPin } from 'react-icons/fi';
 
 export default function FeaturesSection() {
   const features = [
     {
-      title: "Prompt-Based Generator",
-      description: "Generate complete strategies from a single AI prompt",
-      icon: <FiZap size={28} />
+      title: "Brand Analysis",
+      description: "AI-powered insights into your brand identity, audience, and market positioning",
+      icon: <FiTarget size={28} />
     },
     {
-      title: "Brand Profile Setup",
-      description: "Optimize AI with your brand details and goals",
-      icon: <FiUser size={28} />
-    },
-    {
-      title: "Lead Generation",
-      description: "Create clickbait emails and collect subscriber data",
-      icon: <FiMail size={28} />
-    },
-    {
-      title: "Content Toolkit",
-      description: "Generate captions, hashtags, and visual mockups",
-      icon: <FiImage size={28} />
-    },
-    {
-      title: "Vendor Marketplace",
-      description: "Book pop-ups, roadshows, and activations",
-      icon: <FiShoppingBag size={28} />
-    },
-    {
-      title: "Campaign Dashboard",
-      description: "Track KPIs and manage all campaigns",
-      icon: <FiBarChart size={28} />
-    },
-    {
-      title: "Role-Based Access",
-      description: "Separate dashboards for brands, vendors, and teams",
+      title: "Agency Marketplace",
+      description: "Connect with vetted experiential agencies that match your brand and budget",
       icon: <FiUsers size={28} />
     },
     {
-      title: "Credit System",
-      description: "Buy credits for AI features and bookings",
-      icon: <FiCreditCard size={28} />
+      title: "Campaign Management",
+      description: "Plan, execute, and monitor your campaigns from one centralized dashboard",
+      icon: <FiBarChart size={28} />
+    },
+    {
+      title: "Location Intelligence",
+      description: "AI-driven location recommendations for maximum impact and engagement",
+      icon: <FiMapPin size={28} />
     }
   ];
 
   return (
-    <section id="features" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+    <section id="features" className="bg-slate-100 px-10">
+      <div className="max-w-full mx-auto ">
+        {/* <div className="text-center mb-20">
           <h2 className="text-5xl font-bold mb-6">Powerful Features</h2>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to create, execute, and track marketing campaigns
           </p>
-        </div>
+        </div> */}
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 font-light">
           {features.map((feature, index) => (
             <FeatureCard 
               key={feature.title}
