@@ -37,7 +37,7 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
           >
             <div className="opacity-100 transform-none justify-center items-center flex flex-col md:pb-10">
-            <h1 className="text-4xl md:text-5xl mb-8 tracking-widest">
+            <h1 className="text-4xl md:text-5xl mb-8 tracking-widest text-black">
               Transform Your Brand Marketing with AI
             </h1>
             

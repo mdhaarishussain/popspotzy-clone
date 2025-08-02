@@ -24,7 +24,7 @@ export default function FeatureCard({
       <div className="w-16 h-16 rounded-xl bg-pink-100 text-pink-400 flex items-center justify-center mb-5 scale-80">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+      <h3 className="text-xl text-black font-semibold mb-4">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </motion.div>
   );
