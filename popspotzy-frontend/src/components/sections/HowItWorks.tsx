@@ -31,8 +31,8 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">How Popspotzy Works</h2>
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-5xl text-black font-bold mb-6">How Popspotzy Works</h2>
+          <p className="text-xl text-slate-500 max-w-3xl mx-auto">
             Transform your marketing in four simple steps
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function HowItWorks() {
                     {index + 1}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-center">{step.title}</h3>
+                <h3 className="text-2xl text-black font-bold mb-4 text-center">{step.title}</h3>
                 <p className="text-gray-600 text-lg text-center">{step.description}</p>
               </div>
               
