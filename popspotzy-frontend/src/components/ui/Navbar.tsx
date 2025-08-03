@@ -24,13 +24,15 @@ export default function Navbar() {
         </div>
         
         <div className="flex space-x-5">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-5 py-1.5 bg-gradient-to-r cursor-pointer from-pink-600 to-blue-500 text-white rounded-4xl font-medium shadow-md hover:shadow-lg transition-shadow text-sm"
-          >
-            Get Started
-          </motion.button>
+          <Link href="/signup">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-1.5 bg-gradient-to-r cursor-pointer from-pink-600 to-blue-500 text-white rounded-4xl font-medium shadow-md hover:shadow-lg transition-shadow text-sm"
+            >
+              Get Started
+            </motion.button>
+          </Link>
         </div>
       </div>
   );
