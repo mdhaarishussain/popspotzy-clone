@@ -11,9 +11,6 @@ function login(){
       alignItems="center"
       sx={{textAlign: 'center'}} className='w-screen h-screen'
     >
-      <Typography variant="h4" component="h1" gutterBottom>
-        Sign In
-      </Typography>
       <SignIn fallbackRedirectUrl="/dashboard" forceRedirectUrl={'/dashboard'}/>
     </Box>
   )
