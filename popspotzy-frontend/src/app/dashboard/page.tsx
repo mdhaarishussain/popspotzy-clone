@@ -6,7 +6,7 @@ import { SignedIn, SignedOut, RedirectToSignIn, useUser } from "@clerk/nextjs";
 // import Projects from "./[username]/[project]/page";
 
 function Dashboard() {
-  const { user } = useUser();
+  // const { user } = useUser();
 
   return (
     <>

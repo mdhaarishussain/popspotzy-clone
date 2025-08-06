@@ -13,7 +13,7 @@ export default function AppLayout({ children }: Readonly<{ children: React.React
   if (isDashboard || isLogin || isSignup) {
     return (
       <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-          {children}
+          <body>{children}</body>
       </ClerkProvider>
     );
   }
