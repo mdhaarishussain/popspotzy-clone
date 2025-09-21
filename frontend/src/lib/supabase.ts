@@ -1,3 +1,4 @@
+// frontend/src/lib/supabase.ts
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -46,3 +47,17 @@ export const getCurrentUser = async () => {
   const { data: { user }, error } = await supabase.auth.getUser()
   return { user, error }
 }
+
+// Google OAuth sign-in (opens the provider flow)
+export const signInWithGoogle = () => {
+  return supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      // Supabase will redirect the user back to its callback URL, then forward them to redirectTo.
+      // You can set NEXT_PUBLIC_SITE_URL in .env.local; otherwise fallback to localhost dashboard.
+      redirectTo: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000/dashboard',
+    },
+  })
+}
+
+export default supabase
