@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import GradientButton from '@/components/ui/GradientButton';
 import { signUp } from '@/lib/supabase';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { signInWithGoogle } from '@/lib/supabase';
 
 function Signup() {
   const [fullName, setFullName] = useState('');
@@ -129,20 +130,33 @@ function Signup() {
           </div>
           
           <GradientButton 
-            className="w-full py-3 text-center" 
-            disabled={loading}
-          >
-            {loading ? 'Creating Account...' : 'Create Account'}
-          </GradientButton>
-          
-          <div className="text-center">
-            <p className="text-gray-600">
-              Already have an account?{' '}
-              <Link href="/signin" className="text-purple-600 hover:text-purple-700 font-medium">
-                Sign in
-              </Link>
-            </p>
-          </div>
+  className="w-full py-3 text-center" 
+  disabled={loading}
+>
+  {loading ? 'Creating Account...' : 'Create Account'}
+</GradientButton>
+
+{/* Google Sign Up Button */}
+<div className="text-center mt-4">
+  <button
+    type="button"
+    onClick={() => signInWithGoogle()}
+    className="w-full py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center justify-center space-x-2"
+  >
+    <img src="/google-logo.svg" alt="Google Logo" className="w-5 h-5"/>
+    <span>Continue with Google</span>
+  </button>
+</div>
+
+<div className="text-center mt-4">
+  <p className="text-gray-600">
+    Already have an account?{' '}
+    <Link href="/signin" className="text-purple-600 hover:text-purple-700 font-medium">
+      Sign in
+    </Link>
+  </p>
+</div>
+
         </form>
       </div>
     </div>
