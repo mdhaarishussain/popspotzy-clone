@@ -13,7 +13,7 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
+  
   const router = useRouter();
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
@@ -32,56 +32,24 @@ function Signup() {
     try {
       const { data, error } = await signUp(email, password, fullName);
       
-      if (error) {
-        setError(error.message);
-      } else if (data.user) {
-        setSuccess(true);
-        // Check if user needs email confirmation
-        if (data.user.email_confirmed_at) {
-          router.push('/dashboard/gettingstarted');
-        } else {
-          // Show success message for email confirmation
-          setError('');
-        }
-      }
-    } catch (err) {
-      setError('An unexpected error occurred');
-    } finally {
-      setLoading(false);
-    }
-  }, [email, password, fullName, loading, router]);
+     if (error) {
+  setError(error.message);
+} else if (data.user) {
+  router.push('/dashboard'); // Redirect directly to dashboard
+}
+} catch (err) {
+  setError('An unexpected error occurred');
+} finally {
+  setLoading(false);
+}
+}, [email, password, fullName, loading, router]);
+
 
   const togglePasswordVisibility = useCallback(() => {
     setShowPassword(prev => !prev);
   }, []);
 
-  if (success) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Check your email!</h1>
-            <p className="text-gray-600 mb-6">
-              We've sent you a confirmation link at <strong>{email}</strong>
-            </p>
-            <p className="text-sm text-gray-500 mb-6">
-              Click the link in the email to confirm your account, then you can sign in.
-            </p>
-            <Link href="/signin">
-              <GradientButton className="w-full py-3">
-                Go to Sign In
-              </GradientButton>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+ 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
