@@ -6,6 +6,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import GradientButton from '@/components/ui/GradientButton';
 import { signIn } from '@/lib/supabase';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { signInWithGoogle } from '@/lib/supabase';
+
 
 function Signin() {
   const [email, setEmail] = useState('');
@@ -115,20 +117,44 @@ function Signin() {
           </div>
           
           <GradientButton 
-            className="w-full py-3 text-center" 
-            disabled={loading}
-          >
-            {loading ? 'Signing In...' : 'Sign In'}
-          </GradientButton>
-          
-          <div className="text-center">
-            <p className="text-gray-600">
-              Don't have an account?{' '}
-              <Link href="/signup" className="text-purple-600 hover:text-purple-700 font-medium">
-                Sign up
-              </Link>
-            </p>
-          </div>
+  className="w-full py-3 text-center" 
+  disabled={loading}
+>
+  {loading ? 'Signing In...' : 'Sign In'}
+</GradientButton>
+
+{/* Divider */}
+<div className="flex items-center my-6">
+  <div className="flex-grow border-t border-gray-300"></div>
+  <span className="mx-4 text-gray-500 text-sm">or</span>
+  <div className="flex-grow border-t border-gray-300"></div>
+</div>
+
+{/* Google OAuth Button */}
+<button
+  type="button"
+  onClick={() => signInWithGoogle()}
+  className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
+>
+  {/* Google Logo SVG */}
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20">
+    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.2 3.6l6.85-6.85C36.13 2.42 30.55 0 24 0 14.62 0 6.44 5.64 2.48 13.79l7.98 6.19C12.19 14.53 17.62 9.5 24 9.5z"/>
+    <path fill="#4285F4" d="M46.1 24.5c0-1.67-.15-3.29-.42-4.85H24v9.19h12.5c-.54 2.89-2.14 5.34-4.55 6.99l7.02 5.46c4.11-3.78 6.13-9.35 6.13-15.79z"/>
+    <path fill="#FBBC05" d="M10.46 28.38a14.49 14.49 0 0 1-.76-4.38c0-1.52.27-2.99.76-4.38l-7.98-6.19A23.952 23.952 0 0 0 0 24c0 3.91.94 7.61 2.48 10.9l7.98-6.19z"/>
+    <path fill="#34A853" d="M24 48c6.55 0 12.13-2.16 16.17-5.86l-7.02-5.46c-1.96 1.33-4.44 2.12-7.15 2.12-6.38 0-11.81-5.03-13.54-11.9l-7.98 6.19C6.44 42.36 14.62 48 24 48z"/>
+  </svg>
+  Continue with Google
+</button>
+
+<div className="text-center mt-4">
+  <p className="text-gray-600">
+    Don't have an account?{' '}
+    <Link href="/signup" className="text-purple-600 hover:text-purple-700 font-medium">
+      Sign up
+    </Link>
+  </p>
+</div>
+
         </form>
       </div>
     </div>
